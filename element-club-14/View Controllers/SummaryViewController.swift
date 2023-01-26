@@ -11,7 +11,8 @@ class SummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Summary"
+        view.backgroundColor = .orange
         // Do any additional setup after loading the view.
     }
     
