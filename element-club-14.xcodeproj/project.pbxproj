@@ -27,6 +27,12 @@
 		4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */; };
 		4FBF60FD297F71FE00CDF7C0 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */; };
 		4FBF60FF2980DAE400CDF7C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */; };
+		4FBF6102298364A500CDF7C0 /* CryptoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF6101298364A500CDF7C0 /* CryptoHelpers.swift */; };
+		4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF610C2985FF8700CDF7C0 /* UserDBHelper.swift */; };
+		4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF610E2986048900CDF7C0 /* EntriesDbHelper.swift */; };
+		4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */; };
+		4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61122986055900CDF7C0 /* Exercise.swift */; };
+		4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF6114298605C000CDF7C0 /* ElementType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,13 @@
 		4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4FBF6101298364A500CDF7C0 /* CryptoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoHelpers.swift; sourceTree = "<group>"; };
+		4FBF61082983757800CDF7C0 /* element-club-14.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "element-club-14.entitlements"; sourceTree = "<group>"; };
+		4FBF610C2985FF8700CDF7C0 /* UserDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBHelper.swift; sourceTree = "<group>"; };
+		4FBF610E2986048900CDF7C0 /* EntriesDbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesDbHelper.swift; sourceTree = "<group>"; };
+		4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercieUtils.swift; sourceTree = "<group>"; };
+		4FBF61122986055900CDF7C0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4FBF6114298605C000CDF7C0 /* ElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +134,9 @@
 		4FBF60B3297E3E0100CDF7C0 /* element-club-14 */ = {
 			isa = PBXGroup;
 			children = (
+				4FBF610B2985A24B00CDF7C0 /* Database */,
+				4FBF61082983757800CDF7C0 /* element-club-14.entitlements */,
+				4FBF61002983648300CDF7C0 /* Utils */,
 				4FBF60F7297F6C8600CDF7C0 /* Model */,
 				4FBF60F6297F6C1F00CDF7C0 /* View Controllers */,
 				4FBF60B4297E3E0100CDF7C0 /* AppDelegate.swift */,
@@ -156,9 +172,9 @@
 		4FBF60F6297F6C1F00CDF7C0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */,
-				4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */,
 				4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */,
+				4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */,
+				4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -166,8 +182,28 @@
 		4FBF60F7297F6C8600CDF7C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4FBF61122986055900CDF7C0 /* Exercise.swift */,
+				4FBF6114298605C000CDF7C0 /* ElementType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4FBF61002983648300CDF7C0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF6101298364A500CDF7C0 /* CryptoHelpers.swift */,
+				4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4FBF610B2985A24B00CDF7C0 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF610C2985FF8700CDF7C0 /* UserDBHelper.swift */,
+				4FBF610E2986048900CDF7C0 /* EntriesDbHelper.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,10 +351,16 @@
 			files = (
 				4FBF60FF2980DAE400CDF7C0 /* LoginViewController.swift in Sources */,
 				4FBF60B9297E3E0100CDF7C0 /* ViewController.swift in Sources */,
+				4FBF6102298364A500CDF7C0 /* CryptoHelpers.swift in Sources */,
 				4FBF60B5297E3E0100CDF7C0 /* AppDelegate.swift in Sources */,
+				4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */,
+				4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */,
+				4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */,
+				4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */,
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
 				4FBF60B7297E3E0100CDF7C0 /* SceneDelegate.swift in Sources */,
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
+				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
 				4FBF60FD297F71FE00CDF7C0 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,15 +536,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "element-club-14/element-club-14.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PHFDP4SB5Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "element-club-14/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,15 +565,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "element-club-14/element-club-14.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PHFDP4SB5Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "element-club-14/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

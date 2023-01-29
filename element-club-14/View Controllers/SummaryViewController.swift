@@ -8,12 +8,26 @@
 import UIKit
 
 class SummaryViewController: UIViewController {
+    
+    private let loginImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "test"))
+        imageView.frame.size.width = 450
+        imageView.frame.size.width = 450
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Summary"
         view.backgroundColor = .orange
-        // Do any additional setup after loading the view.
+        // Do any additional setup after lo
+        view.addSubview(loginImage)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        loginImage.center = view.center
     }
     
 
