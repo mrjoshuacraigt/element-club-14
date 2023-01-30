@@ -33,6 +33,9 @@
 		4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */; };
 		4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61122986055900CDF7C0 /* Exercise.swift */; };
 		4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF6114298605C000CDF7C0 /* ElementType.swift */; };
+		4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */; };
+		4FBF61282986FBE800CDF7C0 /* SummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */; };
+		4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercieUtils.swift; sourceTree = "<group>"; };
 		4FBF61122986055900CDF7C0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		4FBF6114298605C000CDF7C0 /* ElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
+		4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
+		4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryHeaderView.xib; sourceTree = "<group>"; };
+		4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,8 @@
 		4FBF60B3297E3E0100CDF7C0 /* element-club-14 */ = {
 			isa = PBXGroup;
 			children = (
+				4FBF61292986FF5F00CDF7C0 /* UITableviewCells */,
+				4FBF61242986FB7A00CDF7C0 /* Views */,
 				4FBF610B2985A24B00CDF7C0 /* Database */,
 				4FBF61082983757800CDF7C0 /* element-club-14.entitlements */,
 				4FBF61002983648300CDF7C0 /* Utils */,
@@ -204,6 +212,23 @@
 				4FBF610E2986048900CDF7C0 /* EntriesDbHelper.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		4FBF61242986FB7A00CDF7C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */,
+				4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4FBF61292986FF5F00CDF7C0 /* UITableviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */,
+			);
+			path = UITableviewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +348,7 @@
 			files = (
 				4FBF60C4297E3E0100CDF7C0 /* LaunchScreen.storyboard in Resources */,
 				4FBF60E8297F653F00CDF7C0 /* GoogleService-Info.plist in Resources */,
+				4FBF61282986FBE800CDF7C0 /* SummaryHeaderView.xib in Resources */,
 				4FBF60C1297E3E0100CDF7C0 /* Assets.xcassets in Resources */,
 				4FBF60BC297E3E0100CDF7C0 /* Main.storyboard in Resources */,
 			);
@@ -355,12 +381,14 @@
 				4FBF60B5297E3E0100CDF7C0 /* AppDelegate.swift in Sources */,
 				4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */,
 				4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */,
+				4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */,
 				4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */,
 				4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */,
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
 				4FBF60B7297E3E0100CDF7C0 /* SceneDelegate.swift in Sources */,
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
 				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
+				4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */,
 				4FBF60FD297F71FE00CDF7C0 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

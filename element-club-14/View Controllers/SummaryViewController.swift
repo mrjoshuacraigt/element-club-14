@@ -7,27 +7,108 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController {
+struct SummaryModel {
+    let title: String
+    let value: String
+    let unit: String
+    let date: String
+}
+
+var data = [
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
+    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm")
+]
+
+
+
+class SummaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+
     
-    private let loginImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "test"))
-        imageView.frame.size.width = 450
-        imageView.frame.size.width = 450
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+    let cellId = "cellid"
+    
+    var tableView: UITableView = {
+       let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return tableView
     }()
+    
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Summary"
-        view.backgroundColor = .orange
         // Do any additional setup after lo
-        view.addSubview(loginImage)
+        setup()
+        layout()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        loginImage.center = view.center
+    }
+    
+    func setup() {
+        navigationItem.title = "Summary"
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(SummaryTableViewCell.self, forCellReuseIdentifier: cellId)
+        
+    }
+    
+    func layout() {
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0),
+            tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 0),
+            view.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 0),
+        
+        ])
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SummaryTableViewCell
+        
+        cell.backgroundColor = .gray
+        
+        let summary = data[indexPath.row]
+        cell.summary = summary
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 
