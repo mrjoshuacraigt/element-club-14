@@ -7,11 +7,32 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 
-class UserDbHelper {
+struct UserDbHelper {
     
     private static let database = Database.database().reference()
+    
+    static func getUserData() {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("Usering not found")
+            return
+        }
+
+        database.child("users").child(uid).observeSingleEvent(of: .value, with: { snapshot in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+          let username = value?["email"] as? String ?? ""
+            print(username)
+          // ...
+        }) { error in
+          print(error.localizedDescription)
+        }
+        
+        
+    }
     
     static func addNewUser(uid: String, email: String, displayName: String?) {
         
@@ -20,6 +41,7 @@ class UserDbHelper {
             "name": displayName ?? "",
             "email": email,
             "weight": "nil",
+            "age": String(Int.random(in: 18..<75)),
             "units": "metric"
         ]
         
@@ -28,7 +50,15 @@ class UserDbHelper {
     }
 
     
-    static func updatedUserFirstName() {
+    public static func updatedUserFirstName(name: String) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("Usering not found")
+            return
+        }
+
+        database.updateChildValues(["users/\(uid)/name": name])
+
         
     }
     

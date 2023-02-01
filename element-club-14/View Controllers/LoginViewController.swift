@@ -28,12 +28,18 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if ((UserDefaults.standard.string(forKey: "uid")) != nil) {
-            didAuthenticate()
-        } else {
-            style()
-            layout()
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+          if user != nil {
+            // User is signed in. Show home screen
+              self.didAuthenticate()
+          } else {
+            // No User is signed in. Show user the login screen
+              self.style()
+              self.layout()
+          }
         }
+    
     }
     
     @available(iOS 13, *)
@@ -60,7 +66,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
         
         let profileVc = ProfileViewController()
         profileVc.title = "Profile"
-        let summaryVc = SummaryViewController()
+        let summaryVc = SummaryTableViewController()
         summaryVc.title = "Summary"
         let summaryNc = UINavigationController(rootViewController: summaryVc)
         
@@ -106,20 +112,25 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
                 print(error?.localizedDescription as Any)
             return
           }
-          // User is signed in to Firebase with Apple.
-          // ...
-        
             
-            guard authResult != nil, authResult?.user.uid != nil, authResult?.user.email != nil  else {
-                return
+            if let authResult = authResult, let email = authResult.user.email {
+                
+                
+                if let isNewUser = authResult.additionalUserInfo?.isNewUser {
+                    if isNewUser {
+                        UserDbHelper.addNewUser(uid: authResult.user.uid, email: email, displayName: authResult.user.displayName ?? "")
+                    }
+                }
+                self.didAuthenticate()
+            } else {
+                
+                
+                
             }
-    
-            UserDbHelper.addNewUser(uid: (authResult?.user.uid)!, email: authResult!.user.email!, displayName: authResult?.user.displayName)
-        
-            UserDefaults.standard.set("\(authResult!.user.uid)",forKey: "uid")
-            
-            self.didAuthenticate()
+
         }
+          
+          
       }
     }
 

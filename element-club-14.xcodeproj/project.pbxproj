@@ -25,7 +25,7 @@
 		4FBF60F3297F662200CDF7C0 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4FBF60F2297F662200CDF7C0 /* FirebaseDatabaseSwift */; };
 		4FBF60F5297F662200CDF7C0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4FBF60F4297F662200CDF7C0 /* FirebaseStorage */; };
 		4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */; };
-		4FBF60FD297F71FE00CDF7C0 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */; };
+		4FBF60FD297F71FE00CDF7C0 /* SummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FC297F71FE00CDF7C0 /* SummaryTableViewController.swift */; };
 		4FBF60FF2980DAE400CDF7C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */; };
 		4FBF6102298364A500CDF7C0 /* CryptoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF6101298364A500CDF7C0 /* CryptoHelpers.swift */; };
 		4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF610C2985FF8700CDF7C0 /* UserDBHelper.swift */; };
@@ -36,6 +36,8 @@
 		4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */; };
 		4FBF61282986FBE800CDF7C0 /* SummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */; };
 		4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */; };
+		4FBF612D2988726B00CDF7C0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612C2988726B00CDF7C0 /* Utils.swift */; };
+		4FBF612F2989F49500CDF7C0 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612E2989F49500CDF7C0 /* SummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +74,7 @@
 		4FBF60DA297E3E0100CDF7C0 /* element_club_14UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = element_club_14UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4FBF60E7297F653F00CDF7C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		4FBF60FC297F71FE00CDF7C0 /* SummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewController.swift; sourceTree = "<group>"; };
 		4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FBF6101298364A500CDF7C0 /* CryptoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoHelpers.swift; sourceTree = "<group>"; };
 		4FBF61082983757800CDF7C0 /* element-club-14.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "element-club-14.entitlements"; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
 		4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryHeaderView.xib; sourceTree = "<group>"; };
 		4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		4FBF612C2988726B00CDF7C0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4FBF612E2989F49500CDF7C0 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */,
-				4FBF60FC297F71FE00CDF7C0 /* SummaryViewController.swift */,
+				4FBF60FC297F71FE00CDF7C0 /* SummaryTableViewController.swift */,
 				4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */,
+				4FBF612E2989F49500CDF7C0 /* SummaryViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				4FBF6101298364A500CDF7C0 /* CryptoHelpers.swift */,
 				4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */,
+				4FBF612C2988726B00CDF7C0 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,7 +387,9 @@
 				4FBF60B5297E3E0100CDF7C0 /* AppDelegate.swift in Sources */,
 				4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */,
 				4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */,
+				4FBF612F2989F49500CDF7C0 /* SummaryViewController.swift in Sources */,
 				4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */,
+				4FBF612D2988726B00CDF7C0 /* Utils.swift in Sources */,
 				4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */,
 				4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */,
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
@@ -389,7 +397,7 @@
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
 				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
 				4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */,
-				4FBF60FD297F71FE00CDF7C0 /* SummaryViewController.swift in Sources */,
+				4FBF60FD297F71FE00CDF7C0 /* SummaryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

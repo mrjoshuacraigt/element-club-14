@@ -8,7 +8,9 @@
 import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
-
+    
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layout()
@@ -31,6 +33,9 @@ class SummaryTableViewCell: UITableViewCell {
             titleBarDate.text = summary.date
             valueLabel.text = summary.value
             valueUnitsLabel.text = summary.unit
+            titleBarImageView.image = UIImage(systemName: helpers.getElementImageFromAction(action: summary.action))
+            titleBarImageView.tintColor = helpers.getSummaryTitleColor(action: summary.action)
+            titleBarTitleLabel.tintColor = helpers.getSummaryTitleColor(action: summary.action)
         }
     }
     
@@ -39,7 +44,6 @@ class SummaryTableViewCell: UITableViewCell {
         let image = UIImage(systemName: "heart.fill")
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.tintColor = .systemPink
         
         return imageView
     }()
@@ -56,7 +60,6 @@ class SummaryTableViewCell: UITableViewCell {
     let titleBarTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.text = "Title"
         
@@ -66,7 +69,6 @@ class SummaryTableViewCell: UITableViewCell {
     let titleBarDate: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.text = "Data"
         
@@ -76,7 +78,6 @@ class SummaryTableViewCell: UITableViewCell {
     let valueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.text = "Value"
         
@@ -86,7 +87,6 @@ class SummaryTableViewCell: UITableViewCell {
     let valueUnitsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.text = "units"
         
@@ -114,6 +114,7 @@ class SummaryTableViewCell: UITableViewCell {
         valueStackView.axis = .horizontal
         valueStackView.addArrangedSubview(valueLabel)
         valueStackView.addArrangedSubview(valueUnitsLabel)
+        valueStackView.spacing = 4
         
         addSubview(titleStackView)
         addSubview(valueStackView)

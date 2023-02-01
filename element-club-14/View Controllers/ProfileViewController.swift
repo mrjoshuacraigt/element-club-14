@@ -7,8 +7,11 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
+    
+    private let ref = Database.database().reference()
     
     private let stackInternalStacking: CGFloat = 8
     
@@ -39,6 +42,7 @@ class ProfileViewController: UIViewController {
     private let unitTextField = UITextField();
     
     private let logoutButton = UIButton();
+
     
 
 
@@ -47,8 +51,29 @@ class ProfileViewController: UIViewController {
         self.title = "Profile"
         style()
         layout()
-
         // Do any additional setup after loading the view.
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { snapshot in
+          // Get user value
+            let value = snapshot.value as? NSDictionary
+
+            self.nameTextField.text = value?["name"] as? String ?? "Joe Doe"
+            self.weightTextField.text = value?["weights"] as? String ?? String(Int.random(in: 10..<75))
+            self.unitTextField.text = value?["units"] as? String ?? ""
+            self.emailTextField.text = value?["email"] as? String ?? ""
+            self.ageTextField.text = value?["age"] as? String ?? ""
+            
+          // ...
+        }) { error in
+          print(error.localizedDescription)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+        
     }
     
     
@@ -64,7 +89,6 @@ class ProfileViewController: UIViewController {
         //Create and present tab bar control
     do {
         try Auth.auth().signOut()
-        UserDefaults().set(nil, forKey: "uid")
         let loginVc = LoginViewController()
         loginVc.modalPresentationStyle = .fullScreen
         present(loginVc, animated: false)
@@ -108,6 +132,7 @@ extension ProfileViewController {
         nameTextField.layer.borderColor = UIColor.lightGray.cgColor
         nameTextField.layer.cornerRadius = 8
         nameTextField.delegate = self
+        nameTextField.tag = 1
         
         //email
         emailStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -253,7 +278,14 @@ extension ProfileViewController {
 extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        
+        if (textField.tag == 1) {
+            UserDbHelper.updatedUserFirstName(name: textField.text ?? "")
+        }
+        
+        
+        
+        return textField.resignFirstResponder()
     }
     
     

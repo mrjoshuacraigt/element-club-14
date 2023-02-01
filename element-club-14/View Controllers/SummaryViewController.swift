@@ -2,124 +2,119 @@
 //  SummaryViewController.swift
 //  element-club-14
 //
-//  Created by Joshua Taylor on 1/23/23.
+//  Created by Joshua Taylor on 1/31/23.
 //
 
 import UIKit
 
-struct SummaryModel {
-    let title: String
-    let value: String
-    let unit: String
-    let date: String
-}
-
-var data = [
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm"),
-    SummaryModel(title: "Title1", value: "134", unit: "pds", date: "4:21 pm")
-]
-
-
-
-class SummaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-
+class SummaryViewController: UIViewController {
     
-    let cellId = "cellid"
+    private let dateRangeSegmentedController = UISegmentedControl(items: ["D", "W", "M", "6M", "Y"])
     
-    var tableView: UITableView = {
-       let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return tableView
-    }()
+    private let scrollView = UIScrollView()
     
-
+    private let fakeChartImageView = UIImageView()
     
+    let summaryLabel = UILabel()
+    
+    let summaryTextview = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Summary"
-        // Do any additional setup after lo
+        navigationItem.title = "Summary"
+        // Do any additional setup after loading the view.
         setup()
         layout()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    @objc
+    func addData(){
+        
     }
     
+
     func setup() {
-        navigationItem.title = "Summary"
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(SummaryTableViewCell.self, forCellReuseIdentifier: cellId)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.navigationItem.rightBarButtonItem =  UIBarButtonItem(title: "Add Data", style: .plain, target: self, action: #selector(addData))
+        
+        dateRangeSegmentedController.translatesAutoresizingMaskIntoConstraints = false
+        dateRangeSegmentedController.selectedSegmentIndex = 1
+        
+        
+        fakeChartImageView.image = UIImage(systemName: "chart.xyaxis.line")
+        fakeChartImageView.translatesAutoresizingMaskIntoConstraints = false
+        fakeChartImageView.contentMode = .scaleAspectFit
+        
+        summaryLabel.translatesAutoresizingMaskIntoConstraints = false
+        summaryLabel.text = "Overview"
+        
+        summaryTextview.translatesAutoresizingMaskIntoConstraints = false
+        summaryTextview.text = "Testing Testing"
+        summaryTextview.isEditable = false
+        summaryTextview.backgroundColor = UIColor.systemGray
+        summaryTextview.layer.cornerRadius = 10
+        summaryTextview.sizeToFit()
+        
         
     }
     
     func layout() {
-        view.addSubview(tableView)
+        
+        view.addSubview(scrollView)
+        
+        
+        scrollView.addSubview(dateRangeSegmentedController)
+        scrollView.addSubview(fakeChartImageView)
+        scrollView.addSubview(summaryLabel)
+        scrollView.addSubview(summaryTextview)
+        
+        
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0),
-            tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 0),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 0),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            dateRangeSegmentedController.topAnchor.constraint(equalToSystemSpacingBelow: scrollView.topAnchor, multiplier: 1),
+            dateRangeSegmentedController.leadingAnchor.constraint(equalToSystemSpacingAfter: scrollView.leadingAnchor, multiplier: 2),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: dateRangeSegmentedController.trailingAnchor, multiplier: 2),
+            dateRangeSegmentedController.heightAnchor.constraint(equalToConstant: 30),
+            
+            
+            fakeChartImageView.topAnchor.constraint(equalToSystemSpacingBelow: dateRangeSegmentedController.bottomAnchor, multiplier: 2),
+            
+            fakeChartImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            fakeChartImageView.widthAnchor.constraint(equalToConstant: 550),
+            fakeChartImageView.heightAnchor.constraint(equalToConstant: 300),
+            
+            summaryLabel.topAnchor.constraint(equalToSystemSpacingBelow: fakeChartImageView.bottomAnchor, multiplier: 2),
+            summaryLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: scrollView.leadingAnchor, multiplier: 2),
+            summaryLabel.heightAnchor.constraint(equalToConstant: 45),
+            
+            summaryTextview.topAnchor.constraint(equalToSystemSpacingBelow: summaryLabel.bottomAnchor, multiplier: 2),
+            
+            summaryTextview.leadingAnchor.constraint(equalToSystemSpacingAfter: scrollView.leadingAnchor, multiplier: 2),
+            scrollView.trailingAnchor.constraint(equalToSystemSpacingAfter: summaryTextview.trailingAnchor, multiplier: 2)
+            
+//            dateRangeSegmentedController.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1),
+//            dateRangeSegmentedController.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+//            view.trailingAnchor.constraint(equalToSystemSpacingAfter: dateRangeSegmentedController.trailingAnchor, multiplier: 2),
+//            dateRangeSegmentedController.heightAnchor.constraint(equalToConstant: 30),
+//
+//
+//            fakeChartImageView.topAnchor.constraint(equalToSystemSpacingBelow: dateRangeSegmentedController.bottomAnchor, multiplier: 2),
+//
+//            fakeChartImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            fakeChartImageView.widthAnchor.constraint(equalToConstant: 550),
+//            fakeChartImageView.heightAnchor.constraint(equalToConstant: 300)
+        
+        
         
         ])
-        tableView.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SummaryTableViewCell
         
-        cell.backgroundColor = .gray
-        
-        let summary = data[indexPath.row]
-        cell.summary = summary
-        
-        return cell
         
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
