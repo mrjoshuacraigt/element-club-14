@@ -44,21 +44,12 @@ var data = [
 
 
 
-class SummaryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SummaryTableViewController: UITableViewController {
 
 
     
     let cellId = "cellid"
-    
-    var tableView: UITableView = {
-       let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return tableView
-    }()
-    
 
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,24 +73,25 @@ class SummaryTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func layout() {
-        view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 0),
-//            view.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 0),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+////            view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 0),
+////            view.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 0),
+//            view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
         
         ])
         tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SummaryTableViewCell
                 
         let summary = data[indexPath.row]
@@ -109,15 +101,15 @@ class SummaryTableViewController: UIViewController, UITableViewDataSource, UITab
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let summaryVC = SummaryViewController()
-        self.navigationController?.pushViewController(summaryVC, animated: true)
+        navigationController?.pushViewController(summaryVC, animated: true)
         
     }
 
