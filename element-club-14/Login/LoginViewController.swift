@@ -22,26 +22,13 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        self.style()
+        self.layout()
         // Do any additional setup after loading the view.
         appleLoginButton.addTarget(self, action: #selector(startSignInWithAppleFlow), for: .touchUpInside)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        Auth.auth().addStateDidChangeListener { auth, user in
-          if user != nil {
-            // User is signed in. Show home screen
-              self.didAuthenticate()
-          } else {
-            // No User is signed in. Show user the login screen
-              self.style()
-              self.layout()
-          }
-        }
-    
-    }
-    
+
     @available(iOS 13, *)
     @objc func startSignInWithAppleFlow() {
       let nonce = randomNonceString()
@@ -56,36 +43,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
       authorizationController.presentationContextProvider = self
       authorizationController.performRequests()
     }
-    
-    func didAuthenticate() {
         
-        print("getting tapped")
-        //Create and present tab bar control
-        let tabBarVc = UITabBarController()
-    
-        
-        let profileVc = ProfileViewController()
-        profileVc.title = "Profile"
-        let summaryVc = SummaryTableViewController()
-        summaryVc.title = "Summary"
-        let summaryNc = UINavigationController(rootViewController: summaryVc)
-        
-        tabBarVc.setViewControllers([summaryNc, profileVc], animated: false)
-        
-        guard let items = tabBarVc.tabBar.items else {
-            return
-        }
-        
-        let images = ["chart.xyaxis.line", "person.crop.circle"]
-        
-        for x in 0..<items.count {
-            items[x].image = UIImage(systemName: images[x])
-        }
-
-        tabBarVc.modalPresentationStyle = .fullScreen
-        present(tabBarVc, animated: false)
-    }
-    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
       if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
         guard let nonce = currentNonce else {
@@ -114,23 +72,16 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
           }
             
             if let authResult = authResult, let email = authResult.user.email {
-                
-                
-                if let isNewUser = authResult.additionalUserInfo?.isNewUser {
-                    if isNewUser {
+                if (authResult.additionalUserInfo?.isNewUser) != nil && authResult.additionalUserInfo?.isNewUser == true {
                         UserDbHelper.addNewUser(uid: authResult.user.uid, email: email, displayName: authResult.user.displayName ?? "")
-                    }
                 }
-                self.didAuthenticate()
-            } else {
-                
-                
-                
             }
+            // 1. Name of the Notification
+            let notificationName = Notification.Name("DismissWelcomeScreen")
 
+            // 2. Broadcast the Notification with name, not passing any data
+            NotificationCenter.default.post(name: notificationName, object: nil, userInfo: nil)
         }
-          
-          
       }
     }
 

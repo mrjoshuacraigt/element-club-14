@@ -37,7 +37,11 @@
 		4FBF61282986FBE800CDF7C0 /* SummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */; };
 		4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */; };
 		4FBF612D2988726B00CDF7C0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612C2988726B00CDF7C0 /* Utils.swift */; };
-		4FBF612F2989F49500CDF7C0 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612E2989F49500CDF7C0 /* SummaryViewController.swift */; };
+		4FBF6135298CA85F00CDF7C0 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF6134298CA85F00CDF7C0 /* OnBoardingViewController.swift */; };
+		4FBF613C298CA9DA00CDF7C0 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF613B298CA9DA00CDF7C0 /* WelcomePageViewController.swift */; };
+		4FBF613E2990ABCF00CDF7C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF613D2990ABCF00CDF7C0 /* WelcomeViewController.swift */; };
+		4FBF61402990B11400CDF7C0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF613F2990B11400CDF7C0 /* MainTabBarViewController.swift */; };
+		4FBF61422991ED8600CDF7C0 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61412991ED8600CDF7C0 /* SummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +91,11 @@
 		4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryHeaderView.xib; sourceTree = "<group>"; };
 		4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		4FBF612C2988726B00CDF7C0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		4FBF612E2989F49500CDF7C0 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		4FBF6134298CA85F00CDF7C0 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		4FBF613B298CA9DA00CDF7C0 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		4FBF613D2990ABCF00CDF7C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4FBF613F2990B11400CDF7C0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		4FBF61412991ED8600CDF7C0 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,8 @@
 		4FBF60B3297E3E0100CDF7C0 /* element-club-14 */ = {
 			isa = PBXGroup;
 			children = (
+				4FBF6138298CA8AC00CDF7C0 /* Welcome */,
+				4FBF6130298CA7EA00CDF7C0 /* Login */,
 				4FBF61292986FF5F00CDF7C0 /* UITableviewCells */,
 				4FBF61242986FB7A00CDF7C0 /* Views */,
 				4FBF610B2985A24B00CDF7C0 /* Database */,
@@ -184,10 +194,10 @@
 		4FBF60F6297F6C1F00CDF7C0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */,
+				4FBF61412991ED8600CDF7C0 /* SummaryViewController.swift */,
 				4FBF60FC297F71FE00CDF7C0 /* SummaryTableViewController.swift */,
 				4FBF60FA297F715D00CDF7C0 /* ProfileViewController.swift */,
-				4FBF612E2989F49500CDF7C0 /* SummaryViewController.swift */,
+				4FBF613F2990B11400CDF7C0 /* MainTabBarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -235,6 +245,24 @@
 				4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */,
 			);
 			path = UITableviewCells;
+			sourceTree = "<group>";
+		};
+		4FBF6130298CA7EA00CDF7C0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF60FE2980DAE400CDF7C0 /* LoginViewController.swift */,
+				4FBF6134298CA85F00CDF7C0 /* OnBoardingViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4FBF6138298CA8AC00CDF7C0 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				4FBF613B298CA9DA00CDF7C0 /* WelcomePageViewController.swift */,
+				4FBF613D2990ABCF00CDF7C0 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,12 +410,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBF60FF2980DAE400CDF7C0 /* LoginViewController.swift in Sources */,
+				4FBF613C298CA9DA00CDF7C0 /* WelcomePageViewController.swift in Sources */,
 				4FBF60B9297E3E0100CDF7C0 /* ViewController.swift in Sources */,
+				4FBF61402990B11400CDF7C0 /* MainTabBarViewController.swift in Sources */,
 				4FBF6102298364A500CDF7C0 /* CryptoHelpers.swift in Sources */,
+				4FBF61422991ED8600CDF7C0 /* SummaryViewController.swift in Sources */,
 				4FBF60B5297E3E0100CDF7C0 /* AppDelegate.swift in Sources */,
+				4FBF6135298CA85F00CDF7C0 /* OnBoardingViewController.swift in Sources */,
 				4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */,
 				4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */,
-				4FBF612F2989F49500CDF7C0 /* SummaryViewController.swift in Sources */,
 				4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */,
 				4FBF612D2988726B00CDF7C0 /* Utils.swift in Sources */,
 				4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */,
@@ -397,6 +428,7 @@
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
 				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
 				4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */,
+				4FBF613E2990ABCF00CDF7C0 /* WelcomeViewController.swift in Sources */,
 				4FBF60FD297F71FE00CDF7C0 /* SummaryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

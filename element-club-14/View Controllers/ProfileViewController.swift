@@ -89,9 +89,12 @@ class ProfileViewController: UIViewController {
         //Create and present tab bar control
     do {
         try Auth.auth().signOut()
-        let loginVc = LoginViewController()
-        loginVc.modalPresentationStyle = .fullScreen
-        present(loginVc, animated: false)
+        // 1. Name of the Notification
+        // 1. Name of the Notification
+        let notificationName = Notification.Name("ShowWelcomeScreen")
+
+        // 2. Broadcast the Notification with name, not passing any data
+        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: nil)
     } catch let signOutError as NSError {
       print("Error signing out: %@", signOutError)
     }
