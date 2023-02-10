@@ -1,27 +1,19 @@
 //
-//  WelcomePageViewController.swift
+//  AppleHealthEnableViewController.swift
 //  element-club-14
 //
-//  Created by Joshua Taylor on 2/2/23.
+//  Created by Joshua Taylor on 2/9/23.
 //
 
 import UIKit
 
-class WelcomePageViewController: UIPageViewController {
-    
+class AppleHealthEnableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemMint
-        // Do any additional setup after loading the view.
 
+        // Do any additional setup after loading the view.
     }
-    
-    func setup() {
-        
-    }
-    
-    
     
 
     /*

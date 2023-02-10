@@ -11,12 +11,23 @@ class WelcomeViewController: UIViewController {
     
     let viewControllerContainer = UIView()
     
-    let welcomePageViewController = WelcomePageViewController()
+    let welcomePageViewController: GenericPageViewController = {
+        
+        let page1 = WelcomePageviewItemViewController(image: nil, titleText: "Welcome To", subTitleText: "Element")
+        let page2 = WelcomePageviewItemViewController(image: UIImage(systemName: "square.and.pencil"), titleText: "Simple Tracking", subTitleText: "Quickly log an exercise with minimal inputs.")
+        let page3 = WelcomePageviewItemViewController(image: UIImage(systemName: "cloud"), titleText: "Access from anywhere", subTitleText: "Keep everything at your fingertips on all your favorite devices.")
+        let page4 = WelcomePageviewItemViewController(image: UIImage(systemName: "person.text.rectangle"), titleText: "Become The Best You", subTitleText: "Our program is designed to get you fit and keep you that way")
+        
+        return GenericPageViewController(pages: [page1, page2, page3, page4])
+
+    }()
     
     let buttonContainerView = UIView()
     
-    let loginButton = UIButton()
-    let signupButon = UIButton()
+    let buttonStack = UIStackView()
+    
+    let loginButton = UIButton.elementButton(title: "Login", color: UIColor.systemBlue, buttonType: .filled)
+    let signupButon = UIButton.elementButton(title: "Sign Up", color: UIColor.systemBlue, buttonType: .border)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +36,11 @@ class WelcomeViewController: UIViewController {
         setup()
         layout()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     @objc
@@ -46,38 +62,37 @@ class WelcomeViewController: UIViewController {
     func setup() {
         
         viewControllerContainer.translatesAutoresizingMaskIntoConstraints = false
-        viewControllerContainer.backgroundColor = .systemGray
+        viewControllerContainer.backgroundColor = .systemBlue
+        
+        welcomePageViewController.view.frame = CGRect(x: 0, y: 0, width: viewControllerContainer.frame.width, height: viewControllerContainer.frame.height)
         
         buttonContainerView.translatesAutoresizingMaskIntoConstraints = false
         buttonContainerView.backgroundColor = .systemOrange
-        buttonContainerView.isUserInteractionEnabled = true
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
-        loginButton.frame.size.height = 80
-        loginButton.frame.size.width = 30
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.backgroundColor = .systemBlue
         
         signupButon.translatesAutoresizingMaskIntoConstraints = false
         signupButon.addTarget(self, action: #selector(signupClicked), for: .touchUpInside)
-        signupButon.frame.size.height = 80
-        signupButon.frame.size.width = 30
-        signupButon.setTitle("Sign Up", for: .normal)
-        signupButon.backgroundColor = .systemBlue
+        
+        buttonStack.translatesAutoresizingMaskIntoConstraints = false
+        buttonStack.axis = .vertical
+        buttonStack.spacing = 4
         
         
     }
     
     func layout() {
         
+        viewControllerContainer.addSubview(welcomePageViewController.view)
+        
         view.addSubview(viewControllerContainer)
         view.addSubview(buttonContainerView)
         
-        buttonContainerView.addSubview(signupButon)
-        buttonContainerView.addSubview(loginButton)
+        buttonStack.addArrangedSubview(loginButton)
+        buttonStack.addArrangedSubview(signupButon)
         
-        
+        buttonContainerView.addSubview(buttonStack)
         
         NSLayoutConstraint.activate([
             viewControllerContainer.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0),
@@ -85,17 +100,23 @@ class WelcomeViewController: UIViewController {
             viewControllerContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             viewControllerContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6),
             
-            
             buttonContainerView.topAnchor.constraint(equalToSystemSpacingBelow: viewControllerContainer.bottomAnchor, multiplier: 0),
             buttonContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             buttonContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             buttonContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        
+            buttonStack.centerXAnchor.constraint(equalTo: buttonContainerView.centerXAnchor),
+            buttonStack.centerYAnchor.constraint(equalTo: buttonContainerView.centerYAnchor),
             
-            signupButon.topAnchor.constraint(equalToSystemSpacingBelow: buttonContainerView.topAnchor, multiplier: 4),
-            signupButon.centerXAnchor.constraint(equalTo: buttonContainerView.centerXAnchor),
+//            signupButon.topAnchor.constraint(equalToSystemSpacingBelow: buttonContainerView.topAnchor, multiplier: 4),
+//            signupButon.centerXAnchor.constraint(equalTo: buttonContainerView.centerXAnchor),
+            signupButon.widthAnchor.constraint(equalToConstant: UIButton.BUTTON_WIDTH),
+            signupButon.heightAnchor.constraint(equalToConstant: UIButton.BUTTON_HEIGHT),
 
-            loginButton.topAnchor.constraint(equalToSystemSpacingBelow: signupButon.bottomAnchor, multiplier: 2),
-            loginButton.centerXAnchor.constraint(equalTo: buttonContainerView.centerXAnchor)
+//            loginButton.topAnchor.constraint(equalToSystemSpacingBelow: signupButon.bottomAnchor, multiplier: 2),
+//            loginButton.centerXAnchor.constraint(equalTo: buttonContainerView.centerXAnchor),
+            loginButton.widthAnchor.constraint(equalToConstant: UIButton.BUTTON_WIDTH),
+            loginButton.heightAnchor.constraint(equalToConstant: UIButton.BUTTON_HEIGHT)
         ])
         
         

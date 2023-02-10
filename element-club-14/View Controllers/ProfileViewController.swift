@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
     private let unitLabel = UILabel();
     private let unitTextField = UITextField();
     
-    private let logoutButton = UIButton();
+    private let logoutButton = UIButton.elementButton(title: "Logout", color: .systemRed, buttonType: .filled);
 
     
 
@@ -210,10 +210,7 @@ extension ProfileViewController {
         
         // button
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
-        logoutButton.setTitle("Logout", for: .normal)
         logoutButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        logoutButton.backgroundColor = .systemPink
-        logoutButton.layer.cornerRadius = 8
         
         
     }
@@ -261,8 +258,8 @@ extension ProfileViewController {
             
             logoutButton.topAnchor.constraint(equalToSystemSpacingBelow: containerStack.bottomAnchor, multiplier: 4),
             logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoutButton.widthAnchor.constraint(equalToConstant: 200),
-            logoutButton.heightAnchor.constraint(equalToConstant: 50),
+            logoutButton.widthAnchor.constraint(equalToConstant: UIButton.BUTTON_WIDTH),
+            logoutButton.heightAnchor.constraint(equalToConstant: UIButton.BUTTON_HEIGHT),
             
             nameTextField.heightAnchor.constraint(equalToConstant: 40),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),

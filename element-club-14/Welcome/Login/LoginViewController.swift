@@ -28,6 +28,11 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
         appleLoginButton.addTarget(self, action: #selector(startSignInWithAppleFlow), for: .touchUpInside)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
 
     @available(iOS 13, *)
     @objc func startSignInWithAppleFlow() {

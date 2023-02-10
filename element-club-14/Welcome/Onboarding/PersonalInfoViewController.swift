@@ -1,17 +1,17 @@
 //
-//  OnBoardingViewController.swift
+//  PersonalInfoViewController.swift
 //  element-club-14
 //
-//  Created by Joshua Taylor on 2/2/23.
+//  Created by Joshua Taylor on 2/9/23.
 //
 
 import UIKit
 
-class OnBoardingViewController: UIViewController {
+class PersonalInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemOrange
+
         // Do any additional setup after loading the view.
     }
     
