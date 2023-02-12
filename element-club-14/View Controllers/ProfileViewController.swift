@@ -69,20 +69,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-
-        
-    }
-    
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-    }
-
-    
     @objc func didTapButton() {
         
         print("getting tapped")
@@ -134,7 +120,6 @@ extension ProfileViewController {
         nameTextField.layer.borderWidth = 1
         nameTextField.layer.borderColor = UIColor.lightGray.cgColor
         nameTextField.layer.cornerRadius = 8
-        nameTextField.delegate = self
         nameTextField.tag = 1
         
         //email
@@ -152,7 +137,6 @@ extension ProfileViewController {
         emailTextField.layer.borderWidth = 1
         emailTextField.layer.cornerRadius = 8
         emailTextField.layer.borderColor = UIColor.lightGray.cgColor
-        emailTextField.delegate = self
         
         
         //age
@@ -170,7 +154,6 @@ extension ProfileViewController {
         ageTextField.layer.borderWidth = 1
         ageTextField.layer.cornerRadius = 8
         ageTextField.layer.borderColor = UIColor.lightGray.cgColor
-        ageTextField.delegate = self
         
         
         //weight
@@ -188,7 +171,6 @@ extension ProfileViewController {
         weightTextField.layer.borderWidth = 1
         weightTextField.layer.cornerRadius = 8
         weightTextField.layer.borderColor = UIColor.lightGray.cgColor
-        weightTextField.delegate = self
         
         
         //unit
@@ -206,7 +188,6 @@ extension ProfileViewController {
         unitTextField.layer.borderWidth = 1
         unitTextField.layer.cornerRadius = 8
         unitTextField.layer.borderColor = UIColor.lightGray.cgColor
-        unitTextField.delegate = self
         
         // button
         logoutButton.translatesAutoresizingMaskIntoConstraints = false

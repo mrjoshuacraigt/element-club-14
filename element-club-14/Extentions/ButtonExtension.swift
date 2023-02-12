@@ -23,6 +23,7 @@ extension UIButton {
         let button = UIButton()
         button.layer.cornerRadius = 18
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16.0)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         switch buttonType {
         case .filled:

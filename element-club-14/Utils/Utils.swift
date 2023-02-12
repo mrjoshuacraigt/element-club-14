@@ -27,6 +27,10 @@ enum Action {
 
 struct helpers {
     
+    static let CONTAINER_STACK_SPACING = 4.0
+    
+    static let INTERNAL_STACK_SPACING = 2.0
+    
     static public func getElementImageFromAction(action: Action) -> String{
         switch action {
         case .agility, .coordination, .stablility, .balance, .flexiblity:

@@ -13,16 +13,22 @@ import FirebaseDatabase
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding {
     
     fileprivate var currentNonce: String?
-    
     private let club14ImageView = UIImageView()
+    private let mainStackView = UIStackView.elementStackView(spacing: 12, axis: .vertical)
+
+    private let userNameTextField = UITextField.elementTextField(placerholder: "Username")
+    
+    private let passwordTextField = UITextField.elementTextField(placerholder: "Password", isSecureText: true)
     
     private let appleLoginButton = ASAuthorizationAppleIDButton()
+    
+    private let loginButton = UIButton.elementButton(title: "Login", color: UIColor.systemBlue, buttonType: .filled)
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        self.style()
+        self.setup()
         self.layout()
         // Do any additional setup after loading the view.
         appleLoginButton.addTarget(self, action: #selector(startSignInWithAppleFlow), for: .touchUpInside)
@@ -105,33 +111,67 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate,A
 
 extension LoginViewController {
     
-    func style() {
+    func setup() {
         club14ImageView.translatesAutoresizingMaskIntoConstraints = false
         club14ImageView.image = UIImage(named: "test")
         club14ImageView.contentMode = .scaleAspectFill
         
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        mainStackView.alignment = .center
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
         appleLoginButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        appleLoginButton.layer.cornerRadius = 8
         
     }
     
     func layout() {
-        view.addSubview(club14ImageView)
-        view.addSubview(appleLoginButton)
+        
+        view.addSubview(mainStackView)
+        
+        mainStackView.addArrangedSubview(club14ImageView)
+        mainStackView.addArrangedSubview(userNameTextField)
+        mainStackView.addArrangedSubview(passwordTextField)
+        mainStackView.addArrangedSubview(loginButton)
+        mainStackView.addArrangedSubview(appleLoginButton)
         
         NSLayoutConstraint.activate([
-            club14ImageView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 4),
-            club14ImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            appleLoginButton.topAnchor.constraint(equalToSystemSpacingBelow: club14ImageView.bottomAnchor, multiplier: 8),
-            appleLoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            club14ImageView.widthAnchor.constraint(equalToConstant: 200),
+            club14ImageView.heightAnchor.constraint(equalToConstant: 200),
+             
+            //username
+            userNameTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: userNameTextField.trailingAnchor, multiplier: 2),
+            userNameTextField.heightAnchor.constraint(equalToConstant: 40),
+             
+            //password
+            passwordTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: passwordTextField.trailingAnchor, multiplier: 2),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            loginButton.widthAnchor.constraint(equalToConstant: 200),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+
             appleLoginButton.widthAnchor.constraint(equalToConstant: 200),
             appleLoginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         
     }
+}
+
+extension LoginViewController: UITextFieldDelegate {
     
-    
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
     
     
 }

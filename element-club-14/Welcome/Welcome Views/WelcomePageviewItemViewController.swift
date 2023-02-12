@@ -15,14 +15,7 @@ class WelcomePageviewItemViewController: UIViewController {
     private let subTitleLabel: UILabel
     
     
-    private let containerStack: UIStackView = {
-        let sv = UIStackView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.spacing = 2
-        sv.axis = .vertical
-        
-        return sv
-    }()
+    private let containerStack = UIStackView.elementStackView(spacing: 2.0, axis: .vertical)
     
     init(image: UIImage?, titleText: String, subTitleText: String) {
         self.image = image
