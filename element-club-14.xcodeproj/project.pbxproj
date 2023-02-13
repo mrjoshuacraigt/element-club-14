@@ -45,7 +45,6 @@
 		4FBF61452994844500CDF7C0 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61442994844500CDF7C0 /* ButtonExtension.swift */; };
 		4FBF61482994902400CDF7C0 /* WelcomePageviewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61472994902400CDF7C0 /* WelcomePageviewItemViewController.swift */; };
 		4FBF614A2995D12000CDF7C0 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61492995D12000CDF7C0 /* LabelExtension.swift */; };
-		4FBF614E2995F66500CDF7C0 /* AppleHealthEnableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF614D2995F66500CDF7C0 /* AppleHealthEnableViewController.swift */; };
 		4FBF61502995F6D000CDF7C0 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF614F2995F6D000CDF7C0 /* PersonalInfoViewController.swift */; };
 		4FBF615429995CB700CDF7C0 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */; };
 		4FBF61562999691200CDF7C0 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */; };
@@ -106,7 +105,6 @@
 		4FBF61442994844500CDF7C0 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		4FBF61472994902400CDF7C0 /* WelcomePageviewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageviewItemViewController.swift; sourceTree = "<group>"; };
 		4FBF61492995D12000CDF7C0 /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
-		4FBF614D2995F66500CDF7C0 /* AppleHealthEnableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHealthEnableViewController.swift; sourceTree = "<group>"; };
 		4FBF614F2995F6D000CDF7C0 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				4FBF6134298CA85F00CDF7C0 /* OnBoardingViewController.swift */,
-				4FBF614D2995F66500CDF7C0 /* AppleHealthEnableViewController.swift */,
 				4FBF614F2995F6D000CDF7C0 /* PersonalInfoViewController.swift */,
 			);
 			path = Onboarding;
@@ -482,7 +479,6 @@
 				4FBF61562999691200CDF7C0 /* TextFieldExtension.swift in Sources */,
 				4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */,
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
-				4FBF614E2995F66500CDF7C0 /* AppleHealthEnableViewController.swift in Sources */,
 				4FBF60B7297E3E0100CDF7C0 /* SceneDelegate.swift in Sources */,
 				4FBF615429995CB700CDF7C0 /* StackViewExtension.swift in Sources */,
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,

@@ -43,6 +43,8 @@ extension UIButton {
 
         button.setTitle(title, for: .normal)
         
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }
     

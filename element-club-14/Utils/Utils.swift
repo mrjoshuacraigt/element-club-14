@@ -25,6 +25,11 @@ enum Action {
     case flexiblity
 }
 
+enum ElementUnits {
+    case imperial = "Imperial"
+    case metric = "Metric"
+}
+
 struct helpers {
     
     static let CONTAINER_STACK_SPACING = 4.0
