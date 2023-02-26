@@ -7,23 +7,22 @@
 
 import Foundation
 
-public enum ElementType {
+public enum ElementType: String, CaseIterable {
     
-    case agility_1
-    case agility_2
-    case coordination_1
-    case coordination_2
-    case stability_1
-    case stability_2
-    case balance
-    case flexiblity
-    case strength
-    case acceleration
-    case power
-    case pull
-    case push
-    case speed
-    case stamina
-    case endurance
-    
+    case agility_1 = "agility_1"
+    case agility_2 = "agility_2"
+    case coordination_1 = "Coordination 1"
+    case coordination_2 = "Coordination 2"
+    case stability_1 = "Stability 1"
+    case stability_2 = "Stability 2"
+    case balance = "Balance"
+    case flexiblity = "Flexiblity"
+    case strength = "Strength"
+    case acceleration = "Acceleration"
+    case power = "Power"
+    case pull = "Pull"
+    case push = "Push"
+    case speed = "Speed"
+    case stamina = "Stamina"
+    case endurance = "Endurance"
 }

@@ -29,13 +29,13 @@ class SummaryTableViewCell: UITableViewCell {
     var summary: SummaryModel? {
         didSet {
             guard let summary = summary else {return}
-            titleBarTitleLabel.text = summary.title
-            titleBarDate.text = summary.date
-            valueLabel.text = summary.value
+            titleBarTitleLabel.text = summary.exercise
+            titleBarDate.text = summary.getDateTime()
+            valueLabel.text = summary.perf
             valueUnitsLabel.text = summary.unit
-            titleBarImageView.image = UIImage(systemName: helpers.getElementImageFromAction(action: summary.action))
-            titleBarImageView.tintColor = helpers.getSummaryTitleColor(action: summary.action)
-            titleBarTitleLabel.tintColor = helpers.getSummaryTitleColor(action: summary.action)
+            titleBarImageView.image = UIImage(systemName: helpers.getElementImageFromAction(action: .acceleration))
+            titleBarImageView.tintColor = helpers.getSummaryTitleColor(action: .acceleration)
+            titleBarTitleLabel.tintColor = helpers.getSummaryTitleColor(action: .acceleration)
         }
     }
     

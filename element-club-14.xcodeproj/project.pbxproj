@@ -60,6 +60,7 @@
 		4FF1D69A29A9C98E00E6238A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69929A9C98E00E6238A /* DataLoader.swift */; };
 		4FF1D69C29AAD23E00E6238A /* SummaryLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69B29AAD23E00E6238A /* SummaryLogicController.swift */; };
 		4FF1D69E29AAD52D00E6238A /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69D29AAD52D00E6238A /* SummaryModel.swift */; };
+		4FF1D6A029ABC62300E6238A /* DateExtentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69F29ABC62300E6238A /* DateExtentsion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		4FF1D69929A9C98E00E6238A /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		4FF1D69B29AAD23E00E6238A /* SummaryLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryLogicController.swift; sourceTree = "<group>"; };
 		4FF1D69D29AAD52D00E6238A /* SummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryModel.swift; sourceTree = "<group>"; };
+		4FF1D69F29ABC62300E6238A /* DateExtentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtentsion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				4FBF61492995D12000CDF7C0 /* LabelExtension.swift */,
 				4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */,
 				4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */,
+				4FF1D69F29ABC62300E6238A /* DateExtentsion.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
 				4FBF60B7297E3E0100CDF7C0 /* SceneDelegate.swift in Sources */,
 				4FBF615429995CB700CDF7C0 /* StackViewExtension.swift in Sources */,
+				4FF1D6A029ABC62300E6238A /* DateExtentsion.swift in Sources */,
 				4FF1D69A29A9C98E00E6238A /* DataLoader.swift in Sources */,
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
 				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
