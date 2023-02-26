@@ -48,6 +48,18 @@
 		4FBF61502995F6D000CDF7C0 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF614F2995F6D000CDF7C0 /* PersonalInfoViewController.swift */; };
 		4FBF615429995CB700CDF7C0 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */; };
 		4FBF61562999691200CDF7C0 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */; };
+		4FF1D68529A30B2A00E6238A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68429A30B2A00E6238A /* Enums.swift */; };
+		4FF1D68729A30E7B00E6238A /* ElementCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68629A30E7B00E6238A /* ElementCategory.swift */; };
+		4FF1D68929A31C3F00E6238A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68829A31C3F00E6238A /* UserModel.swift */; };
+		4FF1D68B29A31C6100E6238A /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68A29A31C6100E6238A /* ExerciseModel.swift */; };
+		4FF1D68E29A8637A00E6238A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68D29A8637A00E6238A /* FirebaseService.swift */; };
+		4FF1D69029A865B100E6238A /* ServiceEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68F29A865B100E6238A /* ServiceEnums.swift */; };
+		4FF1D69429A9C47500E6238A /* FirebaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69329A9C47500E6238A /* FirebaseEndpoint.swift */; };
+		4FF1D69629A9C83E00E6238A /* ExerciseLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69529A9C83E00E6238A /* ExerciseLogicController.swift */; };
+		4FF1D69829A9C8E500E6238A /* UserLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69729A9C8E500E6238A /* UserLogicController.swift */; };
+		4FF1D69A29A9C98E00E6238A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69929A9C98E00E6238A /* DataLoader.swift */; };
+		4FF1D69C29AAD23E00E6238A /* SummaryLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69B29AAD23E00E6238A /* SummaryLogicController.swift */; };
+		4FF1D69E29AAD52D00E6238A /* SummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D69D29AAD52D00E6238A /* SummaryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +120,18 @@
 		4FBF614F2995F6D000CDF7C0 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		4FF1D68429A30B2A00E6238A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		4FF1D68629A30E7B00E6238A /* ElementCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCategory.swift; sourceTree = "<group>"; };
+		4FF1D68829A31C3F00E6238A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4FF1D68A29A31C6100E6238A /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		4FF1D68D29A8637A00E6238A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		4FF1D68F29A865B100E6238A /* ServiceEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnums.swift; sourceTree = "<group>"; };
+		4FF1D69329A9C47500E6238A /* FirebaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndpoint.swift; sourceTree = "<group>"; };
+		4FF1D69529A9C83E00E6238A /* ExerciseLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLogicController.swift; sourceTree = "<group>"; };
+		4FF1D69729A9C8E500E6238A /* UserLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogicController.swift; sourceTree = "<group>"; };
+		4FF1D69929A9C98E00E6238A /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		4FF1D69B29AAD23E00E6238A /* SummaryLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryLogicController.swift; sourceTree = "<group>"; };
+		4FF1D69D29AAD52D00E6238A /* SummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +188,7 @@
 		4FBF60B3297E3E0100CDF7C0 /* element-club-14 */ = {
 			isa = PBXGroup;
 			children = (
-				4FBF615729996F2E00CDF7C0 /* Delegates */,
+				4FF1D68C29A8633D00E6238A /* FirebaseService */,
 				4FBF61432994842300CDF7C0 /* Extentions */,
 				4FBF6138298CA8AC00CDF7C0 /* Welcome */,
 				4FBF61292986FF5F00CDF7C0 /* UITableviewCells */,
@@ -183,6 +207,7 @@
 				4FBF60C5297E3E0100CDF7C0 /* Info.plist */,
 				4FBF60BD297E3E0100CDF7C0 /* element_club_14.xcdatamodeld */,
 				4FBF60E7297F653F00CDF7C0 /* GoogleService-Info.plist */,
+				4FF1D69529A9C83E00E6238A /* ExerciseLogicController.swift */,
 			);
 			path = "element-club-14";
 			sourceTree = "<group>";
@@ -221,6 +246,11 @@
 			children = (
 				4FBF61122986055900CDF7C0 /* Exercise.swift */,
 				4FBF6114298605C000CDF7C0 /* ElementType.swift */,
+				4FF1D68429A30B2A00E6238A /* Enums.swift */,
+				4FF1D68629A30E7B00E6238A /* ElementCategory.swift */,
+				4FF1D68829A31C3F00E6238A /* UserModel.swift */,
+				4FF1D68A29A31C6100E6238A /* ExerciseModel.swift */,
+				4FF1D69D29AAD52D00E6238A /* SummaryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,11 +338,17 @@
 			path = "Welcome Views";
 			sourceTree = "<group>";
 		};
-		4FBF615729996F2E00CDF7C0 /* Delegates */ = {
+		4FF1D68C29A8633D00E6238A /* FirebaseService */ = {
 			isa = PBXGroup;
 			children = (
+				4FF1D68D29A8637A00E6238A /* FirebaseService.swift */,
+				4FF1D68F29A865B100E6238A /* ServiceEnums.swift */,
+				4FF1D69329A9C47500E6238A /* FirebaseEndpoint.swift */,
+				4FF1D69729A9C8E500E6238A /* UserLogicController.swift */,
+				4FF1D69929A9C98E00E6238A /* DataLoader.swift */,
+				4FF1D69B29AAD23E00E6238A /* SummaryLogicController.swift */,
 			);
-			path = Delegates;
+			path = FirebaseService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +497,9 @@
 			files = (
 				4FBF60FF2980DAE400CDF7C0 /* LoginViewController.swift in Sources */,
 				4FBF61482994902400CDF7C0 /* WelcomePageviewItemViewController.swift in Sources */,
+				4FF1D69E29AAD52D00E6238A /* SummaryModel.swift in Sources */,
+				4FF1D69629A9C83E00E6238A /* ExerciseLogicController.swift in Sources */,
+				4FF1D68E29A8637A00E6238A /* FirebaseService.swift in Sources */,
 				4FBF613C298CA9DA00CDF7C0 /* GenericPageViewController.swift in Sources */,
 				4FBF61452994844500CDF7C0 /* ButtonExtension.swift in Sources */,
 				4FBF60B9297E3E0100CDF7C0 /* ViewController.swift in Sources */,
@@ -469,23 +508,32 @@
 				4FBF6102298364A500CDF7C0 /* CryptoHelpers.swift in Sources */,
 				4FBF61502995F6D000CDF7C0 /* PersonalInfoViewController.swift in Sources */,
 				4FBF61422991ED8600CDF7C0 /* SummaryViewController.swift in Sources */,
+				4FF1D69C29AAD23E00E6238A /* SummaryLogicController.swift in Sources */,
 				4FBF60B5297E3E0100CDF7C0 /* AppDelegate.swift in Sources */,
 				4FBF6135298CA85F00CDF7C0 /* OnBoardingViewController.swift in Sources */,
 				4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */,
+				4FF1D69429A9C47500E6238A /* FirebaseEndpoint.swift in Sources */,
 				4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */,
 				4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */,
 				4FBF612D2988726B00CDF7C0 /* Utils.swift in Sources */,
+				4FF1D68529A30B2A00E6238A /* Enums.swift in Sources */,
+				4FF1D68B29A31C6100E6238A /* ExerciseModel.swift in Sources */,
+				4FF1D69829A9C8E500E6238A /* UserLogicController.swift in Sources */,
 				4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */,
 				4FBF61562999691200CDF7C0 /* TextFieldExtension.swift in Sources */,
 				4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */,
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
 				4FBF60B7297E3E0100CDF7C0 /* SceneDelegate.swift in Sources */,
 				4FBF615429995CB700CDF7C0 /* StackViewExtension.swift in Sources */,
+				4FF1D69A29A9C98E00E6238A /* DataLoader.swift in Sources */,
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
 				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
 				4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */,
+				4FF1D68729A30E7B00E6238A /* ElementCategory.swift in Sources */,
 				4FBF613E2990ABCF00CDF7C0 /* WelcomeViewController.swift in Sources */,
+				4FF1D68929A31C3F00E6238A /* UserModel.swift in Sources */,
 				4FBF60FD297F71FE00CDF7C0 /* SummaryTableViewController.swift in Sources */,
+				4FF1D69029A865B100E6238A /* ServiceEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

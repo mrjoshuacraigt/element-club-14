@@ -10,6 +10,7 @@ import Foundation
 struct Exercise {
     
     let name: String
+    let category: ElementCategory
     let type: ElementType
     let date: Date
     let perf: String

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 struct SummaryModel {
     let title: String
@@ -49,6 +51,8 @@ class SummaryTableViewController: UITableViewController {
 
     
     let cellId = "cellid"
+    
+    private let summaryLogic = SummaryLogicController()
 
 
     override func viewDidLoad() {
@@ -57,6 +61,16 @@ class SummaryTableViewController: UITableViewController {
         // Do any additional setup after lo
         setup()
         layout()
+        
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        
+        summaryLogic.getSummary(userId: currentUser.uid, then: { [weak self] result in
+            DispatchQueue.main.async {
+                self?.render(result: result)
+            }
+        })
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,6 +94,26 @@ class SummaryTableViewController: UITableViewController {
         
         ])
         tableView.reloadData()
+    }
+    
+    func render(result: SummaryResult) {
+
+        switch result{
+        case .success(let summaryModel):
+            handleSuccess(summaryModel: summaryModel)
+        case .failure(let error):
+            handleError(userModelError: error)
+        }
+    }
+    
+    func handleSuccess(summaryModel: [SummaryModel]) {
+
+//        WeatherDefaults.saveWeatherData(weatherData: weatherModel)
+    }
+    
+    func handleError(userModelError: Error) {
+        print(userModelError.localizedDescription)
+//        WeatherDefaults.saveWeatherData(weatherData: weatherModel)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

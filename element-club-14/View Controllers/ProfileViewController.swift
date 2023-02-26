@@ -42,7 +42,9 @@ class ProfileViewController: UIViewController {
     private let unitTextField = UITextField();
     
     private let logoutButton = UIButton.elementButton(title: "Logout", color: .systemRed, buttonType: .filled);
-
+    
+    
+    private let userLogic = UserLogicController()
     
 
 
@@ -51,23 +53,45 @@ class ProfileViewController: UIViewController {
         self.title = "Profile"
         style()
         layout()
-        // Do any additional setup after loading the view.
-        let userID = Auth.auth().currentUser?.uid
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { snapshot in
-          // Get user value
-            let value = snapshot.value as? NSDictionary
+        
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        
+        userLogic.getUser(userId: currentUser.uid, then: { [weak self] result in
+            DispatchQueue.main.async {
+                self?.render(result: result)
+            }
+        })
 
-            self.nameTextField.text = value?["name"] as? String ?? "Joe Doe"
-            self.weightTextField.text = value?["weights"] as? String ?? String(Int.random(in: 10..<75))
-            self.unitTextField.text = value?["units"] as? String ?? ""
-            self.emailTextField.text = value?["email"] as? String ?? ""
-            self.ageTextField.text = value?["age"] as? String ?? ""
-            
-          // ...
-        }) { error in
-          print(error.localizedDescription)
+        
+    }
+    
+    func render(result: UserResult) {
+
+        switch result{
+        case .success(let userModel):
+            handleSuccess(userModel: userModel)
+        case .failure(let error):
+            handleError(userModelError: error)
         }
     }
+    
+    func handleSuccess(userModel: UserModel) {
+        self.nameTextField.text = userModel.getFullName()
+        self.weightTextField.text = userModel.weight
+        self.unitTextField.text = userModel.units
+        self.emailTextField.text = userModel.email
+        self.ageTextField.text = userModel.getAge()
+//        WeatherDefaults.saveWeatherData(weatherData: weatherModel)
+    }
+    
+    func handleError(userModelError: Error) {
+        print(userModelError.localizedDescription)
+//        WeatherDefaults.saveWeatherData(weatherData: weatherModel)
+    }
+    
+    
     
     @objc func didTapButton() {
         
@@ -259,12 +283,6 @@ extension ProfileViewController {
 extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if (textField.tag == 1) {
-            UserDbHelper.updatedUserFirstName(name: textField.text ?? "")
-        }
-        
-        
         
         return textField.resignFirstResponder()
     }

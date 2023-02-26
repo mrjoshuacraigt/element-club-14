@@ -25,7 +25,7 @@ enum Action {
     case flexiblity
 }
 
-enum ElementUnits {
+enum ElementUnits: String {
     case imperial = "Imperial"
     case metric = "Metric"
 }
