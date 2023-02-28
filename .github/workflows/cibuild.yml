@@ -46,7 +46,7 @@ jobs:
       - name: iOS app
         run: |
          echo xcodebuild -list
-         xcodebuild -scheme "Actions Production" clean archive -archivePath "Actions" -configuration "Release Production"
+         xcodebuild clean archive -archivePath "element-club-14"
 
       - name: export ipa
         env:
