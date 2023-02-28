@@ -33,9 +33,9 @@ class SummaryTableViewCell: UITableViewCell {
             titleBarDate.text = summary.getDateTime()
             valueLabel.text = summary.perf
             valueUnitsLabel.text = summary.unit
-            titleBarImageView.image = UIImage(systemName: helpers.getElementImageFromAction(action: .acceleration))
-            titleBarImageView.tintColor = helpers.getSummaryTitleColor(action: .acceleration)
-            titleBarTitleLabel.tintColor = helpers.getSummaryTitleColor(action: .acceleration)
+            titleBarImageView.image = UIImage(systemName: helpers.getElementImageFromAction(exercise: summary.elementType))
+            titleBarImageView.tintColor = helpers.getSummaryTitleColor(exercise: summary.elementType)
+            titleBarTitleLabel.tintColor = helpers.getSummaryTitleColor(exercise: summary.elementType)
         }
     }
     

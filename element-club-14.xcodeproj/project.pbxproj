@@ -31,8 +31,6 @@
 		4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF610C2985FF8700CDF7C0 /* UserDBHelper.swift */; };
 		4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF610E2986048900CDF7C0 /* EntriesDbHelper.swift */; };
 		4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */; };
-		4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61122986055900CDF7C0 /* Exercise.swift */; };
-		4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF6114298605C000CDF7C0 /* ElementType.swift */; };
 		4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */; };
 		4FBF61282986FBE800CDF7C0 /* SummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */; };
 		4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */; };
@@ -49,7 +47,6 @@
 		4FBF615429995CB700CDF7C0 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */; };
 		4FBF61562999691200CDF7C0 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */; };
 		4FF1D68529A30B2A00E6238A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68429A30B2A00E6238A /* Enums.swift */; };
-		4FF1D68729A30E7B00E6238A /* ElementCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68629A30E7B00E6238A /* ElementCategory.swift */; };
 		4FF1D68929A31C3F00E6238A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68829A31C3F00E6238A /* UserModel.swift */; };
 		4FF1D68B29A31C6100E6238A /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68A29A31C6100E6238A /* ExerciseModel.swift */; };
 		4FF1D68E29A8637A00E6238A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1D68D29A8637A00E6238A /* FirebaseService.swift */; };
@@ -104,8 +101,6 @@
 		4FBF610C2985FF8700CDF7C0 /* UserDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBHelper.swift; sourceTree = "<group>"; };
 		4FBF610E2986048900CDF7C0 /* EntriesDbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesDbHelper.swift; sourceTree = "<group>"; };
 		4FBF61102986051D00CDF7C0 /* ExercieUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercieUtils.swift; sourceTree = "<group>"; };
-		4FBF61122986055900CDF7C0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		4FBF6114298605C000CDF7C0 /* ElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 		4FBF61252986FBCC00CDF7C0 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
 		4FBF61272986FBE800CDF7C0 /* SummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryHeaderView.xib; sourceTree = "<group>"; };
 		4FBF612A2987002000CDF7C0 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,7 +117,6 @@
 		4FBF615329995CB700CDF7C0 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		4FBF61552999691200CDF7C0 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		4FF1D68429A30B2A00E6238A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		4FF1D68629A30E7B00E6238A /* ElementCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCategory.swift; sourceTree = "<group>"; };
 		4FF1D68829A31C3F00E6238A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4FF1D68A29A31C6100E6238A /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		4FF1D68D29A8637A00E6238A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -246,10 +240,7 @@
 		4FBF60F7297F6C8600CDF7C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4FBF61122986055900CDF7C0 /* Exercise.swift */,
-				4FBF6114298605C000CDF7C0 /* ElementType.swift */,
 				4FF1D68429A30B2A00E6238A /* Enums.swift */,
-				4FF1D68629A30E7B00E6238A /* ElementCategory.swift */,
 				4FF1D68829A31C3F00E6238A /* UserModel.swift */,
 				4FF1D68A29A31C6100E6238A /* ExerciseModel.swift */,
 				4FF1D69D29AAD52D00E6238A /* SummaryModel.swift */,
@@ -516,13 +507,11 @@
 				4FBF6135298CA85F00CDF7C0 /* OnBoardingViewController.swift in Sources */,
 				4FBF610F2986048900CDF7C0 /* EntriesDbHelper.swift in Sources */,
 				4FF1D69429A9C47500E6238A /* FirebaseEndpoint.swift in Sources */,
-				4FBF61132986055900CDF7C0 /* Exercise.swift in Sources */,
 				4FBF61262986FBCC00CDF7C0 /* SummaryHeaderView.swift in Sources */,
 				4FBF612D2988726B00CDF7C0 /* Utils.swift in Sources */,
 				4FF1D68529A30B2A00E6238A /* Enums.swift in Sources */,
 				4FF1D68B29A31C6100E6238A /* ExerciseModel.swift in Sources */,
 				4FF1D69829A9C8E500E6238A /* UserLogicController.swift in Sources */,
-				4FBF6115298605C000CDF7C0 /* ElementType.swift in Sources */,
 				4FBF61562999691200CDF7C0 /* TextFieldExtension.swift in Sources */,
 				4FBF61112986051D00CDF7C0 /* ExercieUtils.swift in Sources */,
 				4FBF60FB297F715D00CDF7C0 /* ProfileViewController.swift in Sources */,
@@ -533,7 +522,6 @@
 				4FBF60BF297E3E0100CDF7C0 /* element_club_14.xcdatamodeld in Sources */,
 				4FBF610D2985FF8700CDF7C0 /* UserDBHelper.swift in Sources */,
 				4FBF612B2987002000CDF7C0 /* SummaryTableViewCell.swift in Sources */,
-				4FF1D68729A30E7B00E6238A /* ElementCategory.swift in Sources */,
 				4FBF613E2990ABCF00CDF7C0 /* WelcomeViewController.swift in Sources */,
 				4FF1D68929A31C3F00E6238A /* UserModel.swift in Sources */,
 				4FBF60FD297F71FE00CDF7C0 /* SummaryTableViewController.swift in Sources */,

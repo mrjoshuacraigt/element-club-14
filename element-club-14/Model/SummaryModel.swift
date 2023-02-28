@@ -15,8 +15,7 @@ struct SummaryModel {
     let unit: String
     let dateTime: String
     //TODO change back to Action
-//    let action: Action
-    let action: String
+    let elementType: ElementType?
 
     
     init(dictionary: NSDictionary) {
@@ -25,7 +24,7 @@ struct SummaryModel {
         self.perf = dictionary["perf"] as? String ?? ""
         self.unit = dictionary["unit"] as? String ?? ""
         self.dateTime = dictionary["dateTime"] as? String ?? ""
-        self.action = dictionary["exercise"] as? String ?? ""
+        self.elementType = ElementType(rawValue: dictionary["exercise"] as? String ?? "")
     }
     
     init(uid: String, exercise: String) {
@@ -34,9 +33,9 @@ struct SummaryModel {
         self.perf = "No Exercise Tracked"
         self.unit = ""
         self.dateTime = "empty"
-        self.action = exercise
+        self.elementType = nil
     }
-    
+
     func getDateTime() -> String {
         if (self.dateTime.elementsEqual("empty")) {
             return ""

@@ -36,9 +36,15 @@ struct helpers {
     
     static let INTERNAL_STACK_SPACING = 2.0
     
-    static public func getElementImageFromAction(action: Action) -> String{
-        switch action {
-        case .agility, .coordination, .stablility, .balance, .flexiblity:
+    static public func getElementImageFromAction(exercise: ElementType?) -> String {
+        
+        guard let exercise = exercise else {
+            return ""
+        }
+        
+        switch exercise {
+        case .agility_1, .agility_2, .coordination_1, .coordination_2, .stability_1, .stability_2,
+                .balance, .flexiblity:
             return "figure.cross.training"
         case .strength, .power, .pull, .push:
             return "dumbbell"
@@ -49,9 +55,15 @@ struct helpers {
 
     }
     
-    static public func getSummaryTitleColor(action: Action) -> UIColor {
-        switch action {
-        case .agility, .coordination, .stablility, .balance, .flexiblity:
+    static public func getSummaryTitleColor(exercise: ElementType?) -> UIColor {
+        
+        guard let exercise = exercise else {
+            return UIColor.clear
+        }
+
+        switch exercise {
+        case .agility_1, .agility_2, .coordination_1, .coordination_2, .stability_1, .stability_2,
+                .balance, .flexiblity:
             return UIColor.systemPink
         case .strength, .power, .pull, .push:
             return UIColor.systemPurple
