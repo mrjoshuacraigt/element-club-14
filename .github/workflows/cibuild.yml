@@ -44,7 +44,9 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - name: iOS app
-        run: xcodebuild -scheme "Actions Production" clean archive -archivePath "Actions" -configuration "Release Production"
+        run: |
+         xcodebuild -list
+         xcodebuild -scheme "Actions Production" clean archive -archivePath "Actions" -configuration "Release Production"
 
       - name: export ipa
         env:
