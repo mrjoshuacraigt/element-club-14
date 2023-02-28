@@ -45,7 +45,7 @@ jobs:
 
       - name: iOS app
         run: |
-         xcodebuild -list
+         echo xcodebuild -list
          xcodebuild -scheme "Actions Production" clean archive -archivePath "Actions" -configuration "Release Production"
 
       - name: export ipa
