@@ -5,6 +5,10 @@ on:
     paths:
      - ".github/workflows/**"
      - "**/*.swift"
+
+  concurrency:
+    group: ${{ github.ref }}
+    cancel-in-progress: true
   
 
 jobs:
@@ -55,14 +59,14 @@ jobs:
          xcodebuild clean
          xcodebuild archive -scheme "Actions Productions" -allowProvisioningUpdates -archivePath "Actions"
 
-      - name: export ipa
-        env:
-          EXPORT_PLIST: ${{ secrets.IOS_EXPORT_PORDUCTION }}
-        run: |
-          # crete export options
-          EXPORT_PLIST_PATH=$RUNNER_TEMP/ExportOptions.plist
-          echo -n "$EXPORT_PLIST' | base64 --decode --output $EXPORT_PLIST_PATH
-          xcodebuild -exportArchive -archivePath $GITHUB_WORKSPACE/Actions.xcarchive -exportOptionsPlist $EXPORT_PLIST_PATH -exportPath $RUNNER_TEMP/export -allowProvisioningUpdates
+#      - name: export ipa
+#        env:
+#          EXPORT_PLIST: ${{ secrets.IOS_EXPORT_PORDUCTION }}
+#        run: |
+#          # crete export options
+#          EXPORT_PLIST_PATH=$RUNNER_TEMP/ExportOptions.plist
+#          echo -n "$EXPORT_PLIST' | base64 --decode --output $EXPORT_PLIST_PATH
+#          xcodebuild -exportArchive -archivePath $GITHUB_WORKSPACE/Actions.xcarchive -exportOptionsPlist $EXPORT_PLIST_PATH -exportPath $RUNNER_TEMP/export -allowProvisioningUpdates
 
 #      - name: Upload ipa
 #        uses: actions/upload-artifact@master
