@@ -14,6 +14,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
@@ -50,8 +51,9 @@ jobs:
 
       - name: iOS app
         run: |
-         echo xcodebuild -list
-         xcodebuild -scheme "element-club-14" clean archive -archivePath "element-club-14"
+         xcodebuild -list
+         xcodebuild clean
+         xcodebuild archive -scheme "Actions Productions" -allowProvisioningUpdates -archivePath "Actions"
 
       - name: export ipa
         env:
