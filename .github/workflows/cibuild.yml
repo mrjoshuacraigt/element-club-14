@@ -1,15 +1,5 @@
 name: App build
-on: 
-  push:
-    branches: [main]
-    paths:
-     - ".github/workflows/**"
-     - "**/*.swift"
 
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true
-  
 
 jobs:
   build_with_signing:
