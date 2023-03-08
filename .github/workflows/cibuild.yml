@@ -56,7 +56,7 @@ jobs:
       - name: iOS app
         run: |
          xcodebuild -list
-         xcodebuild archive -scheme "Actions Productions" -allowProvisioningUpdates -archivePath "Actions"
+         xcodebuild archive -scheme "element-club-14" -allowProvisioningUpdates -archivePath "Actions"
 
 #      - name: export ipa
 #        env:
